@@ -16,8 +16,10 @@ query = (Warehouses
 
 
 elapsed_time = time.time() - start
-# how many rows are selected per second
-print(f"PonyORM, Rows/sec: {len(query) / elapsed_time:10.2f}")
+
 # PeeweeORM, Rows/sec:    287882.00
 for row in query:
     print(row)
+
+# how many rows are selected per second
+print(f"PeeweeORM, Rows/sec: {len(query) / elapsed_time:10.2f}")
