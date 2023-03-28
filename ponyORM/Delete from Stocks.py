@@ -1,19 +1,18 @@
 import time
 from schema import *
-from pony.orm import select, db_session, commit
+from pony.orm import db_session, commit, delete, count
 
-# delete all rows from Items
+# delete all rows from Stocks
+with db_session():
+    rows_count = count(i for i in Stocks)
+
 start = time.time()
 
 with db_session():
-    res = list(select(x for x in Items))
-    rows_count = len(res)
-    for r in res:
-        r.delete()
+    delete(i for i in Stocks)
     commit()
 
 elapsed_time = time.time() - start
 # how many rows are deleted per second
 print(f"PonyORM, Rows/sec: {rows_count / elapsed_time:10.2f}")
-# PonyORM, Rows/sec:   14416.71
-
+# PonyORM, Rows/sec:   14272.87

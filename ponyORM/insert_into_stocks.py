@@ -8,14 +8,15 @@ from pony.orm import commit, db_session
 # insert 4000 rows, each row is inserted in a db session
 rows_count = 4000
 start = time.time()
-
-for i in range(rows_count):
+i=0
+while i < rows_count:
     with db_session():
-        warehouse = Warehouses.get(w_id=random.randint(1, 200))
-        item = Items.get(i_id=random.randint(1, 200))
+        warehouse = Warehouses.get(w_id=random.randint(1, 2000))
+        item = Items.get(i_id=random.randint(1, 2000))
         if Stocks.exists(w_id=warehouse, i_id=item):
             continue
         Stocks(w_id=warehouse, i_id=item, s_qty=random.randint(0, 100))
+        i = i+1
         commit()
 
 elapsed_time = time.time() - start
