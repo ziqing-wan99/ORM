@@ -4,12 +4,12 @@ from pony.orm import db_session, commit, delete, count
 
 # delete all rows from Stocks
 with db_session():
-    rows_count = count(i for i in Items)
+    rows_count = count(i for i in Stocks)
 
 start = time.time()
 
 with db_session():
-    delete(i for i in Items)
+    delete(i for i in Stocks)
     commit()
 
 elapsed_time = time.time() - start
