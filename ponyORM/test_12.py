@@ -3,7 +3,7 @@ import time
 from schema import *
 from pony.orm import select, db_session, commit
 
-# update i_name of all rows from Items
+# Update i_name from Items
 start = time.time()
 
 with db_session():
@@ -16,5 +16,4 @@ with db_session():
 elapsed_time = time.time() - start
 # how many rows are updated per second
 print(f"PonyORM, Rows/sec: {rows_count / elapsed_time:10.2f}")
-# PonyORM, Rows/sec:   14101.20
 
