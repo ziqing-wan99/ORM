@@ -3,7 +3,7 @@ import time
 from schema import *
 from pony.orm import select, db_session
 
-# select rows from Items with i_price<50
+# Select from Items where i_id <100
 rows_count = 0
 start = time.time()
 

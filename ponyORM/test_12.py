@@ -3,7 +3,7 @@ import time
 from schema import *
 from pony.orm import select, db_session, commit
 
-# update i_name of all rows from Items
+# Update i_name from Items
 start = time.time()
 
 with db_session():

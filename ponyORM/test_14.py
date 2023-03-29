@@ -2,14 +2,14 @@ import time
 from schema import *
 from pony.orm import db_session, commit, delete, count
 
-# delete all rows from Stocks
+# Delete from Stocks
 with db_session():
-    rows_count = count(i for i in Stocks)
+    rows_count = count(i for i in Items)
 
 start = time.time()
 
 with db_session():
-    delete(i for i in Stocks)
+    delete(i for i in Items)
     commit()
 
 elapsed_time = time.time() - start

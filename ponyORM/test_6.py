@@ -1,16 +1,16 @@
 import time
 
 from schema import *
-from pony.orm import select, db_session, distinct, count
-from pony.orm import *
-# select rows from Items with i_price<50
+from pony.orm import select, db_session, distinct
+
+# Select Distinct i_price from items
 rows_count = 0
 start = time.time()
 
 with db_session():
-    res = select((s.w_id, sum(s.s_qty)) for s in Stocks if s.w_id.w_id < 1000)
+    res = list(select(distinct(i.i_price) for i in Items))
     rows_count += len(res)
-    print(res[:])
+    print(rows_count)
 
 elapsed_time = time.time() - start
 # how many rows are selected per second

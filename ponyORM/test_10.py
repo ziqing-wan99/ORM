@@ -1,14 +1,14 @@
 import time
 
 from schema import *
-from pony.orm import select, db_session
+from pony.orm import *
 
-# select rows from Items with i_price<50
+# Select w_id, count(w_id)  from Stocks where w_id<1000 group by w_id
 rows_count = 0
 start = time.time()
 
 with db_session():
-    res = list(select(x for x in Items if x.i_price < 50))
+    res = select((s.w_id, count(s.s_qty)) for s in Stocks if s.w_id.w_id < 1000)
     rows_count += len(res)
 
 elapsed_time = time.time() - start

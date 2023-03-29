@@ -4,7 +4,7 @@ import time
 from schema import *
 from pony.orm import commit, db_session
 
-# insert 20000 rows, all rows are inserted in a db session
+# insert 20000 rows into items in one db session
 rows_count = 20000
 start = time.time()
 
@@ -19,4 +19,3 @@ with db_session():
 elapsed_time = time.time() - start
 # how many rows are inserted per second
 print(f"PonyORM, Rows/sec: {rows_count / elapsed_time:10.2f}")
-# PonyORM, Rows/sec:   18115.75

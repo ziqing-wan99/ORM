@@ -3,6 +3,7 @@ from itertools import count
 from pony.orm import select, db_session
 from ponyORM.schema import Warehouses
 
+# Select from Stocks left join Warehouses
 # Select w.w_id, w.w_name, s.s_qty from the Warehouses and Stocks tables
 start = time.time()
 

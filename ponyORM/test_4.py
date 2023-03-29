@@ -5,7 +5,7 @@ from schema import *
 from pony.orm import commit, db_session
 
 
-# insert 20000 rows, each row is inserted in a db session
+# insert 20000 rows into items row by row
 rows_count = 20000
 start = time.time()
 
