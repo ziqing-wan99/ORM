@@ -11,4 +11,4 @@ test_10: Select w_id, count(w_id)  from Stocks where w_id<1000 group by w_id\
 test_11: Select w_id, sum(quantity)  from Stocks where w_id<1000 group by w_id\
 test_12: Update i_name from Items\
 test_13: Select from Stocks left join Warehouses\
-test_14: Delete from Stocks\
+test_14: Delete from Stocks
