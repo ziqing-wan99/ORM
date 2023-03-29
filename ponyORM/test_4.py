@@ -21,4 +21,3 @@ for i in range(rows_count):
 elapsed_time = time.time() - start
 # how many rows are inserted per second
 print(f"PonyORM, Rows/sec: {rows_count / elapsed_time:10.2f}")
-# PonyORM, Rows/sec:    5605.76

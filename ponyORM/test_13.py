@@ -15,5 +15,3 @@ with db_session():
 elapsed_time = time.time() - start
 # how many rows are selected per second
 print(f"PonyORM, Rows/sec: {rows_count / elapsed_time:10.2f}")
-# PonyORM, Rows/sec:    287882.00
-print(result)
