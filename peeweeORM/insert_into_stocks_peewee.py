@@ -9,12 +9,14 @@ from peewee import *
 rows_count = 4000
 start = time.time()
 
-for i in range(rows_count):
+i = 0
+while i < rows_count:
     warehouse = Warehouses.get(w_id=random.randint(1, 200))
     item = Items.get(i_id=random.randint(1, 200))
     if Stocks.select().where(Stocks.w_id == warehouse, Stocks.i_id == item).exists():
         continue
     Stocks.create(w_id=warehouse, i_id=item, s_qty=random.randint(0, 100))
+    i = i + 1
 
 elapsed_time = time.time() - start
 # how many rows are inserted per second

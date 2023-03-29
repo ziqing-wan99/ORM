@@ -5,7 +5,7 @@ from schema import *
 from peewee import *
 
 # insert 2000 rows, all rows are inserted in a db session
-rows_count = 2000
+rows_count = 20000
 start = time.time()
 
 with db.transaction():
