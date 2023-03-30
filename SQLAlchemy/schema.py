@@ -20,7 +20,7 @@ class Items(Base):
     i_price = Column(mysql.DOUBLE(), nullable=False)
 
 # 初始化数据库连接:
-engine = create_engine(f"mysql://root:@localhost/tbench")
+engine = create_engine(f"mysql://root:Greenspan6@localhost/tbench")
 # 创建DBSession类型:
 DBSession = sessionmaker(bind=engine)
 

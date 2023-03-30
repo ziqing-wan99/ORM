@@ -4,8 +4,8 @@ from schema import *
 from sqlalchemy.orm import sessionmaker
 
 
-# insert 2000 rows, each row is inserted in a db session
-rows_count = 2000
+# insert 20000 rows, each row is inserted in a db session
+rows_count = 20000
 start = time.time()
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -21,4 +21,4 @@ session.commit()
 elapsed_time = time.time() - start
 
 print(f"SQLAlchemy ORM, Rows/sec: {rows_count / elapsed_time: 10.2f}")
-# SQLAlchemy ORM, Rows/sec:    11523.21
+# SQLAlchemy ORM, Rows/sec:    9698.66
