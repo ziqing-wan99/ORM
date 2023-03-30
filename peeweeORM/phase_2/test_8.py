@@ -8,7 +8,8 @@ rows_count = 0
 start = time.time()
 
 with db.transaction():
-    items = list(Items.select().where(Items.i_id < 10000))
+    items = Items.select().where(Items.i_id < 10000)
+    items.execute()
     rows_count = items.count()
 
 elapsed_time = time.time() - start

@@ -8,7 +8,7 @@ rows_count = 0
 start = time.time()
 
 query = (Stocks
-         .select(Stocks.w_id, fn.Sum(Stocks.quantity))
+         .select(Stocks.w_id, fn.Sum(Stocks.s_qty))
          .where(Stocks.w_id < 1000)
          .group_by(Stocks.w_id))
 

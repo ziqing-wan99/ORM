@@ -8,7 +8,7 @@ rows_count = 0
 start = time.time()
 
 with db.transaction():
-    distinct_prices = list(Items.select(Items.i_price).distinct())
+    distinct_prices = Items.select(Items.i_price).distinct()
     rows_count = distinct_prices.count()
 
 elapsed_time = time.time() - start

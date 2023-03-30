@@ -14,11 +14,11 @@ query = (Warehouses
          .join(Stocks)
          .dicts())
 
-
+query.execute()
 elapsed_time = time.time() - start
 
-for row in query:
-    print(row)
+
+
 
 # how many rows are selected per second
 print(f"PeeweeORM, Rows/sec: {len(query) / elapsed_time:10.2f}")
