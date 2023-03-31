@@ -10,17 +10,22 @@ finally:
     pass
 
 from tpcc.models import Items, Warehouses, Stocks
+from django.db import transaction
 
 count = 0
 start = time.time()
 
-for _ in range(10):
-    res = list(Stocks.objects.select_related('i_id').all())
-    count += len(res)
+objs = list(Items.objects.all())
+count = len(objs)
+
+with transaction.atomic():
+    for obj in objs:
+        obj.i_name = f"{obj.i_name} Update"
+        obj.save()
 
 elapsed_time = time.time() - start
 
 # how many rows are inserted per second
 print(f"Django, Rows/sec: { count / elapsed_time:10.2f}")
 
-# Django, Rows/sec: [61766.71]
+# Django, Rows/sec: [1966.20]
