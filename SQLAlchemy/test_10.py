@@ -13,6 +13,6 @@ res = session.query(Stocks.w_id, func.count(Stocks.w_id)).filter(Stocks.w_id < 1
 elapsed_time = time.time() - start
 rows_count = len(res)
 # how many rows are selected per second
-print(f"SQLAlchemy ORM, Rows/sec: {rows_count / elapsed_time: 10.2f}")
+print(f"Test 10 SQLAlchemy ORM, Rows/sec: {rows_count / elapsed_time: 10.2f}")
 # SQLAlchemy ORM, Rows/sec:   17403.75
 

@@ -12,6 +12,6 @@ res = session.query(Items.i_price).distinct().all()
 elapsed_time = time.time() - start
 rows_count = len(res)
 # how many rows are selected per second
-print(f"SQLAlchemy ORM, Rows/sec: {rows_count / elapsed_time: 10.2f}")
+print(f"Test 6 SQLAlchemy ORM, Rows/sec: {rows_count / elapsed_time: 10.2f}")
 # SQLAlchemy ORM, Rows/sec:   88181.90
 

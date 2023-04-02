@@ -13,6 +13,6 @@ res = query.filter(Items.i_price < 50).all()
 elapsed_time = time.time() - start
 rows_count = len(res)
 # how many rows are selected per second
-print(f"SQLAlchemy ORM, Rows/sec: {rows_count / elapsed_time: 10.2f}")
+print(f"Test 5 SQLAlchemy ORM, Rows/sec: {rows_count / elapsed_time: 10.2f}")
 # SQLAlchemy ORM, Rows/sec:   22612.14
 
