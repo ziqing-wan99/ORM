@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 # insert 2000 rows, each row is inserted in a db session
-rows_count = 2000
+rows_count = 20000
 start = time.time()
 Session = sessionmaker(bind=engine)
 session = Session()
