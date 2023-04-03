@@ -2,7 +2,7 @@ import time
 from schema import *
 from sqlalchemy.orm import sessionmaker
 
-# select rows from Items with i_price<50
+# select distinct rows from Items
 rows_count = 0
 start = time.time()
 Session = sessionmaker(bind=engine)
